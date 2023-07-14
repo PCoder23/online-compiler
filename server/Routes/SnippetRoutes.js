@@ -4,8 +4,8 @@ import {
   fetchSnippet,
   reSubmitSnippet,
   deleteSnippet,
-} from "../controllers/SnippetController";
-import auth from "../middleware/auth";
+} from "../controllers/SnippetController.js";
+import auth from "../middleware/auth.js";
 
 const router = Router();
 

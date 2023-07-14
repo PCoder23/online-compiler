@@ -1,6 +1,10 @@
-import userModel from "../models/userModel";
+import userModel from "../models/userModel.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
+import dotenv from "dotenv";
+dotenv.config();
+
+const secret = process.env.SECRET;
 
 export const signIn = async (req, res) => {
   try {
@@ -40,14 +44,15 @@ export const signUp = async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, 12);
 
     const newUser = new userModel({ name, email, password: hashedPassword });
-    await newUser.save();
 
-    const token = jsw.sign({ email: newUser, email, id: newUser._id }, secret, {
+    const token = jwt.sign({ email: newUser.email, id: newUser._id }, secret, {
       expiresIn: "100h",
     });
 
+    await newUser.save();
+
     res.status(201).json({ result: newUser, token });
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    res.status(404).json({ message: error.message });
   }
 };

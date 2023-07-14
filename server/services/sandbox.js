@@ -1,5 +1,5 @@
 export const executeCode = async (snippet) => {
   snippet.output = "Hello World!";
-  snippet.time = "100ms";
+  snippet.executionTime = 100;
   return snippet;
 };

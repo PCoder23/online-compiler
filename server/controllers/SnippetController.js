@@ -1,5 +1,5 @@
-import snippetModel from "../models/snippetsModel";
-import { executeCode } from "../sandbox/sandbox";
+import snippetModel from "../models/snippetsModel.js";
+import { executeCode } from "../services/sandbox.js";
 
 export const fetchSnippet = async (req, res) => {
   const { id } = req.params;
@@ -16,10 +16,9 @@ export const submitSnippet = async (req, res) => {
       return res
         .status(400)
         .json({ message: "Please login to submit a snippet" });
-    const result = new snippetModel({
+    var result = new snippetModel({
       code: code,
       language: language,
-      output: output,
     });
     result = await executeCode(result);
     res.status(201).json(result);
