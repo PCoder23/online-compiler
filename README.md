@@ -4,7 +4,7 @@
 # used docker image python and docker image node for executing python and javascript
 
 
-![Screenshot (29)](https://github.com/PCoder23/online-compiler/assets/85278795/e1ee821d-e6f0-4638-90f7-5a4e50efbbec)
+![Screenshot (29)](https://github.com/PCoder23/online-compiler/assets/85278795/0d8bad57-4a74-45fa-8468-e207886e8b49)
 
 
-![Screenshot (30)](https://github.com/PCoder23/online-compiler/assets/85278795/b8590b3f-c0e9-43b6-836c-7ee929bffd30)
+![Screenshot (30)](https://github.com/PCoder23/online-compiler/assets/85278795/69a99f01-875e-4e95-aa11-228b0b7d5a9e)
