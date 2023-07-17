@@ -10,7 +10,7 @@ import snippetRoutes from "./Routes/SnippetRoutes.js";
 dotenv.config();
 
 const app = express();
-
+app.use(cors());
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 
@@ -20,7 +20,6 @@ const port = process.env.PORT || 5000;
 app.use("/api/auth", UserRoutes);
 app.use("/api/snippet", snippetRoutes);
 
-app.use(cors());
 mongoose
   .connect(process.env.MONGO_URL)
   .then(() => {

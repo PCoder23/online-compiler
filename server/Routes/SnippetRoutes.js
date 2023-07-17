@@ -10,7 +10,7 @@ import auth from "../middleware/auth.js";
 const router = Router();
 
 router.get("/:id", auth, fetchSnippet);
-router.post("/", auth, submitSnippet);
+router.post("/", submitSnippet);
 router.put("/:id", auth, reSubmitSnippet);
 router.delete("/:id", auth, deleteSnippet);
 

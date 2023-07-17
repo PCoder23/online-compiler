@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { Player } from "@lottiefiles/react-lottie-player";
 import { useNavigate } from "react-router-dom";
-import { signIn,signUp } from "../api";
+import { signIn, signUp } from "../api";
 
 const Input = ({ type, placeholder, handleChange, value }) => {
   return (
@@ -42,7 +42,8 @@ const Auth = () => {
       const { data } = signIn(formData);
       console.log(data);
     } else {
-      console.log("Signup");
+      const { data } = signUp(formData);
+      console.log(data);
     }
     navigate("/");
   };

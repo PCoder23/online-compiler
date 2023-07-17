@@ -9,8 +9,6 @@ const secret = process.env.SECRET;
 export const signIn = async (req, res) => {
   try {
     const { email, password } = req.body;
-    if (userModel.findOne({ email: req.body.email }))
-      return res.status(400).json({ message: "User already exists" });
     if (!email || !password)
       return res.status(400).json({ message: "Please fill all the fields" });
 
